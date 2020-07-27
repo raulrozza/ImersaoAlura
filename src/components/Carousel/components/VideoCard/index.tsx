@@ -16,7 +16,11 @@ interface IProps {
     categoryColor: string;
 }
 
-const VideoCard: React.FC = ({ videoTitle, videoURL, categoryColor }) => {
+const VideoCard: React.FC<IProps> = ({
+    videoTitle,
+    videoURL,
+    categoryColor,
+}) => {
     const image = `https://img.youtube.com/vi/${getYouTubeId(
         videoURL,
     )}/hqdefault.jpg`;

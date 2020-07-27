@@ -4,7 +4,7 @@ interface IProps {
     url: string;
 }
 
-export const VideoCardContainer = styled.a<Props>`
+export const VideoCardContainer = styled.a<IProps>`
     border: 2px solid;
     border-radius: 4px;
     text-decoration: none;
