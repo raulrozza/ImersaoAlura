@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Assets
 import logo from '../../assets/img/logo.png';
@@ -11,10 +12,10 @@ import './styles.css';
 const Menu: React.FC = () => {
     return (
         <nav className="Menu">
-            <a href="/">
+            <Link to="/">
                 <img className="Logo" src={logo} alt="Rozzaflix" />
-            </a>
-            <Button as="a" href="/">
+            </Link>
+            <Button as={Link} to="/cadastro/video">
                 Novo vídeo
             </Button>
         </nav>

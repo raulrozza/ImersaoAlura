@@ -69,7 +69,6 @@ export const ContentAreaContainer = {
 
 export const BannerMainContainer = styled.section<IProps>`
     height: 80vh;
-    margin-top: 90px;
     position: relative;
     color: #fff;
     background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};

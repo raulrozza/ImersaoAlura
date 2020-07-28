@@ -8,6 +8,8 @@ O projeto foi desenvolvido durante a Imersão Alura, evento promovido pela Alura
 
 **Create React App:** O usual bootstrapper de React, que cria todo o ambiente para inicializar um projeto rapidamente.
 **Styled Components:** Uma ferramenta para criar componentes estilizados usando JavaScript em linguagem CSS.
+**React Slick:** Uma biblioteca para criar um carrossel suave.
+**React Helmet:** Biblioteca para manipular o *head* do HTML, alterando meta e outras informações de cabeçalho com React.
 
 ### Desenvolvedor
 

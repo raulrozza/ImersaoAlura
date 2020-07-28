@@ -22,6 +22,12 @@
     background-color: var(--shadow);
   }
 
+  #root {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+  }
+
   a {
     color: inherit;
   }

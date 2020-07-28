@@ -2,13 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-    VideoCardGroupContainer,
-    VideoCardList,
-    Title,
-    ExtraLink,
-} from './styles';
+import { VideoCardGroupContainer, Title, ExtraLink } from './styles';
 import VideoCard from './components/VideoCard';
+import Slider from './components/Slider';
+import { SliderItem } from './components/Slider/styles';
 
 interface IVideo {
     title: string;
@@ -28,10 +25,7 @@ interface IProps {
     };
 }
 
-const VideoCardGroup: React.FC<IProps> = ({
-    ignoreFirstVideo = false,
-    category,
-}) => {
+const Carousel: React.FC<IProps> = ({ ignoreFirstVideo = false, category }) => {
     const categoryTitle = category.title;
     const categoryColor = category.color;
     const categoryExtraLink = category.link_extra;
@@ -46,28 +40,28 @@ const VideoCardGroup: React.FC<IProps> = ({
                     {categoryExtraLink.text}
                 </ExtraLink>
             )}
-            <VideoCardList>
+            <Slider sliderBtnColor={categoryColor}>
                 {videos.map((video, index) => {
                     if (ignoreFirstVideo && index === 0) {
                         return null;
                     }
 
                     return (
-                        <li key={video.title}>
+                        <SliderItem key={video.title}>
                             <VideoCard
                                 videoTitle={video.title}
                                 videoURL={video.url}
                                 categoryColor={categoryColor}
                             />
-                        </li>
+                        </SliderItem>
                     );
                 })}
-            </VideoCardList>
+            </Slider>
         </VideoCardGroupContainer>
     );
 };
 
-VideoCardGroup.propTypes = {
+Carousel.propTypes = {
     ignoreFirstVideo: PropTypes.bool,
     category: PropTypes.shape({
         title: PropTypes.string.isRequired,
@@ -85,4 +79,4 @@ VideoCardGroup.propTypes = {
     }).isRequired,
 };
 
-export default VideoCardGroup;
+export default Carousel;
