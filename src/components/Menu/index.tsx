@@ -7,18 +7,18 @@ import logo from '../../assets/img/logo.png';
 // Components
 import Button from './Button';
 
-import './styles.css';
+import { NavBar, Logo } from './styles';
 
 const Menu: React.FC = () => {
     return (
-        <nav className="Menu">
+        <NavBar>
             <Link to="/">
-                <img className="Logo" src={logo} alt="Rozzaflix" />
+                <Logo src={logo} alt="Rozzaflix" />
             </Link>
             <Button as={Link} to="/cadastro/video">
                 Novo vídeo
             </Button>
-        </nav>
+        </NavBar>
     );
 };
 

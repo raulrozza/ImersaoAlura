@@ -35,7 +35,8 @@
                 "trailingComma": "all",
                 "arrowParens": "avoid"
             }
-        ]
+        ],
+        "no-unused-vars": 0
     },
     "overrides": [
         {

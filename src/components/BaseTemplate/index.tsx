@@ -11,17 +11,22 @@ import { Main } from './styles';
 
 interface IProps {
     title: string;
+    horizontalPadding?: boolean;
     children: React.ReactNode;
 }
 
-const BaseTemplate: React.FC<IProps> = ({ title, children }) => {
+const BaseTemplate: React.FC<IProps> = ({
+    title,
+    horizontalPadding = true,
+    children,
+}) => {
     return (
         <>
             <Helmet>
                 <title>{title}</title>
             </Helmet>
             <Menu />
-            <Main>{children}</Main>
+            <Main horizontalPadding={horizontalPadding}>{children}</Main>
             <Footer />
         </>
     );
@@ -29,6 +34,7 @@ const BaseTemplate: React.FC<IProps> = ({ title, children }) => {
 
 BaseTemplate.propTypes = {
     title: PropTypes.string.isRequired,
+    horizontalPadding: PropTypes.bool,
     children: PropTypes.node.isRequired,
 };
 

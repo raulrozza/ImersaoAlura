@@ -7,22 +7,24 @@ import VideoCard from './components/VideoCard';
 import Slider from './components/Slider';
 import { SliderItem } from './components/Slider/styles';
 
-interface IVideo {
+export interface IVideo {
     title: string;
     url: string;
 }
 
+export interface ICategory {
+    title: string;
+    color: string;
+    link_extra?: {
+        text: string;
+        url: string;
+    } | null;
+    videos: IVideo[];
+}
+
 interface IProps {
     ignoreFirstVideo?: boolean;
-    category: {
-        title: string;
-        color: string;
-        link_extra?: {
-            text: string;
-            url: string;
-        } | null;
-        videos: IVideo[];
-    };
+    category: ICategory;
 }
 
 const Carousel: React.FC<IProps> = ({ ignoreFirstVideo = false, category }) => {

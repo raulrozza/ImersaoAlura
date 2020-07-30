@@ -1,8 +1,26 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Button = styled.button`
+interface IProps {
+    variant?: 'transparent' | 'black';
+}
+
+const Button = styled.button<IProps>`
     color: var(--white);
     border: 1px solid var(--white);
+    ${({ variant }) => {
+        switch (variant) {
+            case 'transparent':
+                return css`
+                    background-color: transparent;
+                `;
+            case 'black':
+                return css`
+                    background-color: var(--black);
+                `;
+            default:
+                return '';
+        }
+    }}
     box-sizing: border-box;
     cursor: pointer;
     padding: 16px 24px;
@@ -17,6 +35,10 @@ const Button = styled.button`
     &:hover,
     &:focus {
         opacity: 0.5;
+    }
+
+    &:disabled {
+        cursor: standard;
     }
 
     @media (max-width: 800px) {
