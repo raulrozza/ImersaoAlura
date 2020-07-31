@@ -13,6 +13,7 @@ export interface IVideo {
 }
 
 export interface ICategory {
+    id: number;
     title: string;
     color: string;
     link_extra?: {
@@ -66,6 +67,7 @@ const Carousel: React.FC<IProps> = ({ ignoreFirstVideo = false, category }) => {
 Carousel.propTypes = {
     ignoreFirstVideo: PropTypes.bool,
     category: PropTypes.shape({
+        id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
         color: PropTypes.string.isRequired,
         link_extra: PropTypes.shape({

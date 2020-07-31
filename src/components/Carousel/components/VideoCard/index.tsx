@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { VideoCardContainer } from './styles';
+import { useVideoSelect } from '../../../../pages/Home';
 
 function getYouTubeId(youtubeURL: string) {
     return youtubeURL.replace(
@@ -24,6 +25,15 @@ const VideoCard: React.FC<IProps> = ({
     const image = `https://img.youtube.com/vi/${getYouTubeId(
         videoURL,
     )}/hqdefault.jpg`;
+    const setSelectedVideo = useVideoSelect();
+
+    const handleSelect: React.MouseEventHandler = event => {
+        event.preventDefault();
+
+        setSelectedVideo({ title: videoTitle, url: videoURL });
+        window.scrollTo({ top: 0 });
+    };
+
     return (
         <VideoCardContainer
             url={image}
@@ -31,6 +41,7 @@ const VideoCard: React.FC<IProps> = ({
             target="_blank"
             style={{ borderColor: categoryColor || 'red' }}
             title={videoTitle}
+            onClick={handleSelect}
         />
     );
 };

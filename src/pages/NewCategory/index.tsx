@@ -36,7 +36,7 @@ const NewCategory: React.FC = () => {
         setDisabledBtn(true);
 
         try {
-            await api.post('categories', { ...values, videos: [] });
+            await api.post('categories', values);
 
             push('/cadastro/video');
         } catch (error) {

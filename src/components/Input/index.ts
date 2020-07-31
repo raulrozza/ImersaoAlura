@@ -15,6 +15,7 @@ export const InputLabelText = styled.span`
     font-size: 18px;
     font-style: normal;
     font-weight: 300;
+    cursor: text;
 
     transition: 0.1s ease-in-out;
 `;
